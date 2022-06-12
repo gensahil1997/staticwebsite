@@ -3,7 +3,8 @@ name: Docker Image CI
 on:
   push:
     branches: [ master ]
-
+env:
+  IMAGE_REPO: 172.16.47.132:5000
 
 jobs:
 
@@ -14,5 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s) |
-            docker push static/$GITHUB_REPOSITORY:${{github.run_number}}
+      run: |
+           docker build . --file Dockerfile --tag ${{env.IMAGE_REPOSITORY}}/$GITHUB_REPOSITORY:${{github.run_number}}
+           docker push ${{env.IMAGE_REPOSITORY}}/$GITHUB_REPOSITORY:${{github.run_number}}
