@@ -18,3 +18,6 @@ jobs:
       run: |
            docker build . --file Dockerfile --tag ${{env.IMAGE_REPOSITORY}}/$GITHUB_REPOSITORY:${{github.run_number}}
            docker push ${{env.IMAGE_REPOSITORY}}/$GITHUB_REPOSITORY:${{github.run_number}}
+           docker tag ${{env.IMAGE_REPOSITORY}}/$GITHUB_REPOSITORY:${{github.run_number}} ${{env.IMAGE_REPOSITORY}}/$GITHUB_REPOSITORY:latest
+           docker push ${{env.IMAGE_REPOSITORY}}/$GITHUB_REPOSITORY:latest
+           echo "Pushed Docker Image ${{env.IMAGE_REPOSITORY}}/$GITHUB_REPOSITORY:${{github.run_number}}"
