@@ -14,9 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: install docker 
-    - uses: docker-practice/actions-setup-docker@master
-    - run: |
-          set +x
-          docker --version
-          docker build . --file Dockerfile app:${{github.run_number}}
+      uses: docker-practice/actions-setup-docker@master
+
+ 
+  builds:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Docker Images
+      run: |
+             docker build . --file Dockerfile app:${{github.run_number}}
+      
          
