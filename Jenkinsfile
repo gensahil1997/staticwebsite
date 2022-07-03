@@ -1,13 +1,18 @@
 pipeline {
-  agent {
-    label 'any'
-  }
-  
+  agent any
   stages {
-      stage ('Test') {
-          steps {
-              echo 'Hello'
+    stage('Test') {
+      agent any
+      steps {
+        echo 'Hello'
       }
     }
+
+    stage('') {
+      steps {
+        echo 'Successful'
+      }
+    }
+
   }
 }
