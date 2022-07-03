@@ -13,7 +13,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: build docker image
-      run: | 
-         docker build . --file Dockerfile:${{github.run_number}}
+    - name: install docker 
+    - uses: docker-practice/actions-setup-docker@master
+    - run: |
+          set +x
+          docker --version
+          docker build . --file Dockerfile app:${{github.run_number}}
          
