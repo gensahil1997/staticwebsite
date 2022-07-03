@@ -24,6 +24,8 @@ jobs:
     steps:
     - name: Docker Images
       run: |
+             echo "$PWD"
+             ls -la
              docker build . --file Dockerfile --tag app:${{github.run_number}}
       
          
