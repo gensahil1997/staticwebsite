@@ -1,0 +1,19 @@
+name: Static Web Github Action
+on:
+  push:
+    branches: master
+
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+  
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: build docker image
+      run: | 
+         docker build . --file Dockerfile:${{github.run_number}}
+         
