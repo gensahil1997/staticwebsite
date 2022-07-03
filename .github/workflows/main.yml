@@ -12,16 +12,12 @@ jobs:
     - name: install docker 
       uses: docker-practice/actions-setup-docker@master
 
-  checkout:
+  builds:
     runs-on: ubuntu-latest
     steps:
     - name: build
       uses: actions/checkout@v2
-
-  builds:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
+      
     - name: Docker Images
       run: |
              echo "$PWD"
