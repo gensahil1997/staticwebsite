@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  web:
+    image: ${IMAGE_REPOSITORY}/${PROJECT}:latest
+    container_name: ${PROJECT}
+    ports:
+      - ${PORTS}:80
+    volumes:
+      - ./app:/usr/share/nginx/html
