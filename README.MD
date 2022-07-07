@@ -20,4 +20,4 @@ All of the site templates I create for [HTML5 UP](https://html5up.net/) are lice
 
 More info [here](https://html5up.net/license).
 
-Runner is also
+Runner is also available
