@@ -9,16 +9,8 @@ concurrency:
   
 jobs:
   
-  build:
-  
-    runs-on: ubuntu-latest
-    steps:
-    - name: install docker 
-      uses: docker-practice/actions-setup-docker@master
-
   builds:
-    runs-on: demorunner
-    needs: build
+    runs-on: [self-hosted,demorunner]
     steps:
     - name: build
       uses: actions/checkout@v2
