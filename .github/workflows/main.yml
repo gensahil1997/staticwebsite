@@ -2,10 +2,15 @@ name: Static Web Github Action
 on:
   push:
     branches: [master]
-
+    
+concurrency:
+  group: ${{ github.workflow }} 
+  cancel-in-progress: true
+  
 jobs:
   
   build:
+  
     runs-on: ubuntu-latest
     steps:
     - name: install docker 
