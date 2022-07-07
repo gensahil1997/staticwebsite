@@ -17,7 +17,7 @@ jobs:
       uses: docker-practice/actions-setup-docker@master
 
   builds:
-    runs-on: ubuntu-latest
+    runs-on: demorunner
     needs: build
     steps:
     - name: build
