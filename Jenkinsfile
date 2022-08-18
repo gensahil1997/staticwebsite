@@ -2,13 +2,12 @@ pipeline {
   agent { label 'Agent1' }
   stages {
     stage('Test') {
-      agent any
       steps {
         echo 'Hello'
       }
     }
 
-    stage('') {
+    stage('Print') {
       steps {
         echo 'Successful'
       }
